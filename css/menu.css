@@ -1,0 +1,129 @@
+*{
+		margin:0;
+		padding:0;
+}
+header{
+	height:50px;
+}
+*, *:before, *:after{ /* regra para o box-sizing */
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.cf:before, /* regra para o clear float */
+.cf:after {
+	content: " ";
+	display: table;
+}
+.cf:after {
+	clear: both;
+}
+.cf {
+	*zoom: 1;
+}
+#lateral{
+	-moz-transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	font-size:1em;
+	background-image: linear-gradient(to bottom,#008B8B,#000080); /*Cor do menu em gradiente*/
+	height:100%;
+	overflow:hidden;
+	width:25%; /*Tamanho da barra*/
+	position:fixed;
+	top:0;
+	left:-22%; /*Posição do menus*/
+}
+#lateral:before {
+	z-index:1000;
+	font-size:4em;
+	color:white;
+	position:fixed;
+	left:4px;
+	top:45px;
+}
+#lateral:hover, #lateral:focus,  #lateral:active  {
+	overflow-y:scroll;
+	-moz-transform: translate(320px, 0);
+	-webkit-transform: translate(320px, 0);
+	-o-transform: translate(320px, 0);
+	transform: translate(320px, 0);
+	padding-right:0;
+}
+#lateral .box {
+	list-style-type:none;
+	margin: 0.2em 0 0em  1.5em; /*Espaçamento entre as linhas*/
+	padding-bottom:1em;
+}
+#lateral h3 {
+	display:inline-block;
+	font-size:1.6em;
+	font-style:normal;
+	padding-bottom:0.2em;
+	margin: 0em 0 0em 1.5em; /*Espaçamento entre as linhas*/
+	color:rgb(255,255,255);
+}
+#menu{
+	position:relative;
+	font-size:1.0em; 
+	margin:1em 0 1em -1em;
+	padding:0;
+}
+#menu li {padding:0; margin:0;}
+#menu li a,  #menu li a:link {
+	font-size:1.2em;
+	color:rgb(255,255,255);
+	text-decoration: none;
+	padding: 0.8em 0 0.8em 1em;
+	display: block;
+	-moz-transition: all 1.2s ease;
+	-webkit-transition: all 1.2s ease;
+	transition: all 1.2s ease;
+}
+#menu li a:hover {
+	color:rgb(255,255,255);
+	background-color:rgba(255,255,255,0.2);
+	-moz-transition: all 0.5s ease; /*Comandos especificos para adaptar em diferentes brousers*/
+	-webkit-transition: all 0.5s ease; /*Comandos especificos para adaptar em diferentes brousers*/
+	transition: all 0.5s ease;
+}
+	@media (max-width: 500px) { /*Condição do tamanho da tela, até 500 px*/
+header{margin-left:0;background-size:100% 28em!important;}
+#lateral {
+	padding:0;
+	-moz-transition: all 0.5s ease; /*Comandos especificos para adaptar em diferentes brousers*/
+	-webkit-transition: all 0.5s ease; /*Comandos especificos para adaptar em diferentes brousers*/
+	transition: all 0.5s ease;
+	font-size:1.2em;
+	height:100%;
+	overflow:none;
+	width:100%; 
+	position:static;
+	top:0;
+	left:0;
+}
+#lateral:before {
+	z-index:1000;
+	width:0;
+	text-align:center;
+	content: "";
+	font-size:0;
+	color:white;
+	position:static;
+	top:0;
+	left:0;
+	display:inline-block; 
+}
+#lateral:hover, #lateral:focus {
+	overflow:scroll;
+	-moz-transform: none; /*Comandos especificos para adaptar em diferentes brousers*/
+	-webkit-transform: none; /*Comandos especificos para adaptar em diferentes brousers*/
+	-o-transform:none; /*Comandos especificos para adaptar em diferentes brousers*/
+	transform:none; /*Comandos especificos para adaptar em diferentes brousers*/
+}
+#menu li a {
+border-bottom:1px solid #ccc;
+}
+#menu li:first-child a {
+	border-top:1px solid #ccc;
+}
